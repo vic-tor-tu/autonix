@@ -1,0 +1,268 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.logo-2{
+    width: 70px;
+    border-radius: 50px;
+}
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    color: #fff;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.logo p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.logo span {
+    color: #ff9900; /* Construction Orange */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff9900;
+}
+
+/* Sections */
+section {
+    padding: 100px 10%;
+    min-height: 80vh;
+}
+
+/* Home Section */
+.hero {
+    background-image: url('images/website-hosting-concept-with-circuits.jpg');
+    display: flex;
+    align-items: center;
+    margin: 50px 0 0 0;
+    gap: 30px;
+}
+.hero img{
+    width: 100%;
+}
+.hero p{
+    font-size: 30px;
+    color: #e0e0e0;
+    line-height: 50px;
+}
+.hero h1 {
+    font-size: 70px;
+    color: #f4f4f4;
+    margin-bottom: 20px;
+}
+.hero-content{
+    flex: 0 0 60%;
+}
+.services-grid {
+    flex: 0 0 40%;
+}
+
+/* Works Slider */
+.works-section {
+    background: #e0e0e0;
+    text-align: center;
+}
+.works-section h2{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+.slider-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* position: relative; */
+    /* max-width: 800px; */
+    /* margin: 40px auto; */
+    /* overflow: hidden; */
+    /* border-radius: 10px; */
+}
+.slider-container > div{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    padding: 20px 20px;
+}
+.slider-container img{
+    width: 50%;
+}
+.slider-container h2{ font-size: 35px; margin-top: 15px;}
+.slider-container h3{ font-size: 27px;}
+.slider-container p{ font-size: 22px; margin-top: 25px;}
+.slider-container ul{ margin-top: 15px;}
+.slider-container li{
+    margin: 0 30px;
+    font-size: 22px;
+    text-align: left;
+}
+.slider-container span{ font-weight: bold;}
+.slider img {
+    width: 100%;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.next-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: rgba(255, 153, 0, 0.8);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+}
+
+/* Contact Section */
+.contact-section {
+    background: #222;
+    color: white;
+    text-align: center;
+    min-height: 50vh;
+}
+
+.contact-card {
+    background: #333;
+    padding: 40px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.info-item {
+    margin: 15px 0;
+}
+
+.info-item a {
+    color: #ff9900;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #777;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* --- Media Query for Mobile Devices --- */
+@media (max-width: 768px) {
+    
+    /* 1. Navbar: Stack the logo and links vertically */
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+        position: static; /* Optional: un-fix it if it takes up too much screen space */
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .nav-links a {
+        font-size: 18px; /* Reduced from 30px */
+    }
+
+    /* 2. Hero Section: Stack text and image */
+    .hero {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .hero-content, .services-grid {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Reduced from 70px */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    /* 3. Services Grid: Change from 3 columns to 1 column */
+    .slider-container {
+        grid-template-columns: 1fr; /* Stack the cards */
+        gap: 30px;
+    }
+
+    .slider-container li {
+        font-size: 16px; /* Smaller list text */
+        margin: 0 15px;
+    }
+
+    /* 4. Section Spacing */
+    section {
+        padding: 50px 5%; /* Less padding on small screens */
+    }
+
+    .works-section h2 {
+        font-size: 28px;
+    }
+
+    /* 5. Contact Card */
+    .contact-card {
+        width: 100%;
+        padding: 20px;
+    }
+}
