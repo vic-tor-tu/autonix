@@ -16,6 +16,23 @@ function nextSlide() {
     // Show new slide
     slides[currentSlideIndex].classList.add('active');
 }
+const swiper = new Swiper('.swiper', {
+  loop: true, // Allows infinite scrolling
+  
+  // This section activates the "Next" and "Prev" buttons
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
-// Optional: Auto-slide every 5 seconds
-// setInterval(nextSlide, 5000);
+  // This adds the clickable dots at the bottom
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  
+  // Keyboard control is a nice touch for desktop users
+  keyboard: {
+    enabled: true,
+  },
+});

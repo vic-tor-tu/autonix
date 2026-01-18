@@ -5,10 +5,31 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.logo-2{
-    width: 70px;
+
+.swiper {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 50%;
+    height: 40vh;
+    object-fit: cover;
+    display: block;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo-2 {
+    width: 25px;
     border-radius: 50px;
 }
+
 body {
     background-color: #f4f4f4;
     color: #333;
@@ -35,13 +56,16 @@ body {
     align-items: center;
     text-transform: uppercase;
 }
-.logo p{
+
+.logo p {
     font-size: 1.5rem;
     font-weight: bold;
     margin-left: 10px;
 }
+
 .logo span {
-    color: #ff9900; /* Construction Orange */
+    color: #ff9900;
+    /* Construction Orange */
 }
 
 .nav-links {
@@ -55,13 +79,17 @@ body {
 
 .nav-links a {
     color: #fff;
-    font-size: 30px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 8px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .nav-links a:hover {
     color: #ff9900;
+    background-color: #111;
 }
 
 /* Sections */
@@ -78,22 +106,29 @@ section {
     margin: 50px 0 0 0;
     gap: 30px;
 }
-.hero img{
+
+.hero img {
     width: 100%;
+    height: 80vh;
 }
-.hero p{
-    font-size: 30px;
+
+.hero p {
+    font-size: 1.5rem;
+    font-weight: 100;
     color: #e0e0e0;
     line-height: 50px;
 }
+
 .hero h1 {
-    font-size: 70px;
+    font-size: 3rem;
     color: #f4f4f4;
     margin-bottom: 20px;
 }
-.hero-content{
+
+.hero-content {
     flex: 0 0 60%;
 }
+
 .services-grid {
     flex: 0 0 40%;
 }
@@ -103,37 +138,56 @@ section {
     background: #e0e0e0;
     text-align: center;
 }
-.works-section h2{
-    font-size: 35px;
+
+.works-section h2 {
+    font-size: 2rempx;
     margin-bottom: 30px;
 }
+
 .slider-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    /* position: relative; */
-    /* max-width: 800px; */
-    /* margin: 40px auto; */
-    /* overflow: hidden; */
-    /* border-radius: 10px; */
 }
-.slider-container > div{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+.slider-container>div {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding: 20px 20px;
 }
-.slider-container img{
+
+.slider-container img {
     width: 50%;
 }
-.slider-container h2{ font-size: 35px; margin-top: 15px;}
-.slider-container h3{ font-size: 27px;}
-.slider-container p{ font-size: 22px; margin-top: 25px;}
-.slider-container ul{ margin-top: 15px;}
-.slider-container li{
+
+.slider-container h2 {
+    font-size: 1.3rem;
+    margin-top: 15px;
+}
+
+.slider-container h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.slider-container p {
+    font-size: 1rem;
+    margin-top: 25px;
+}
+
+.slider-container ul {
+    margin-top: 15px;
+}
+
+.slider-container li {
     margin: 0 30px;
-    font-size: 22px;
+    font-size: 1rem;
     text-align: left;
 }
-.slider-container span{ font-weight: bold;}
+
+.slider-container span {
+    font-weight: bold;
+}
+
 .slider img {
     width: 100%;
     display: none;
@@ -163,9 +217,10 @@ section {
     background: #222;
     color: white;
     text-align: center;
-    min-height: 50vh;
+    min-height: 10vh;
 }
 
+/* .contact-section h2 { margin: 0;} */
 .contact-card {
     background: #333;
     padding: 40px;
@@ -189,18 +244,53 @@ footer {
     color: #777;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+i {
+    font-size: 1.2rem;
+    margin: 10px;
+    transition: 0.3s;
 }
+
+.fa-whatsapp:hover {
+    color: #25D366;
+}
+
+.fa-x-twitter:hover {
+    color: #000000;
+}
+
+.fa-instagram:hover {
+    color: #E1306C;
+}
+
+.social-icon {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Add a nice "pop" effect when you hover over the link */
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 /* --- Media Query for Mobile Devices --- */
 @media (max-width: 768px) {
-    
+
     /* 1. Navbar: Stack the logo and links vertically */
     .navbar {
         flex-direction: column;
         padding: 1rem;
-        position: static; /* Optional: un-fix it if it takes up too much screen space */
+        position: static;
+        /* Optional: un-fix it if it takes up too much screen space */
     }
 
     .nav-links {
@@ -214,7 +304,8 @@ footer {
     }
 
     .nav-links a {
-        font-size: 18px; /* Reduced from 30px */
+        font-size: 18px;
+        /* Reduced from 30px */
     }
 
     /* 2. Hero Section: Stack text and image */
@@ -224,36 +315,38 @@ footer {
         text-align: center;
         margin-top: 0;
     }
-
-    .hero-content, .services-grid {
+    .hero-content,
+    .services-grid {
         flex: 0 0 100%;
         width: 100%;
     }
-
     .hero h1 {
-        font-size: 32px; /* Reduced from 70px */
+        font-size: 32px;
+        /* Reduced from 70px */
         line-height: 1.2;
+        
     }
-
     .hero p {
         font-size: 18px;
         line-height: 28px;
     }
-
-    /* 3. Services Grid: Change from 3 columns to 1 column */
+    .hero img {
+        width: 100%;
+        height: 60vh;
+    }
     .slider-container {
-        grid-template-columns: 1fr; /* Stack the cards */
+        grid-template-columns: 1fr;
+        /* Stack the cards */
         gap: 30px;
     }
-
     .slider-container li {
-        font-size: 16px; /* Smaller list text */
+        font-size: 16px;
+        /* Smaller list text */
         margin: 0 15px;
     }
-
     /* 4. Section Spacing */
     section {
-        padding: 50px 5%; /* Less padding on small screens */
+        padding: 50px 5%;
     }
 
     .works-section h2 {
